@@ -1,0 +1,16 @@
+function kn-connect() {
+    ZONE_DEBUG=europe-west1-d
+    ZONE_PREPROD=europe-west1
+
+    if [[ $1 == *"preprod"* ]]; then
+        ZONE=$ZONE_PREPROD
+    else
+        ZONE=$ZONE_DEBUG
+    fi
+
+    echo "gcloud container clusters get-credentials $1 --zone $ZONE --project epages-ng"
+
+    gcloud components update
+
+    gcloud container clusters get-credentials $1 --zone $ZONE --project epages-ng
+}

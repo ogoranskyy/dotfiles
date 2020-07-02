@@ -1,0 +1,3 @@
+function filter_tenant_id() {
+    filter_payloads | jq '.tenantId' | sort | uniq
+}

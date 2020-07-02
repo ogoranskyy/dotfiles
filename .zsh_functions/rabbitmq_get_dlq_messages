@@ -1,0 +1,10 @@
+function rabbitmq_get_dlq_messages() {
+  VERTICAL_NAME=$1
+  if [[ -n $VERTICAL_NAME ]]; then
+    cd $BEYOND/ng-infra/dev/cloudamqp-tools
+    source 00_export_credentials-prod.sh
+    ./10_get_messages.sh ${VERTICAL_NAME}.dlq.all 1000
+  else
+    echo "Please provide a vertial name as parameter, e.g. order"
+  fi
+}
