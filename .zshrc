@@ -125,10 +125,12 @@ PATH="$BEYOND/ng-spikes/beyond-console:$PATH"
 
 alias connect_telepresence="sh ~/Development/connect_telepresence.sh"
 
-# before doing it, get the credentials with kn-connect
-alias debug-mysql="kubectl port-forward deployment/mysql 3306:3306"
+# get the credentials with kn-connect if you want to conenct to debug
+alias connect_cloud_mysql="kubectl port-forward deployment/mysql 3306:3306"
 
 alias cloud_sql_proxy_live="/opt/cloud_sql_proxy -instances=beyond-live:europe-west1:beyondshop-cloud-01a=tcp:3306"
+
+alias cloud_sql_proxy_preprod="/opt/cloud_sql_proxy -instances=epages-ng:europe-west1:preprod-03a=tcp:3306"
 
 alias enable_message_tracing_debug="sh ~/Development/enable_message_tracing_on_debug.sh"
 
@@ -141,3 +143,7 @@ if [ -f '/home/ogoranskyy/Downloads/google-cloud-sdk-275.0.0-linux-x86_64/google
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/ogoranskyy/Downloads/google-cloud-sdk-275.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/ogoranskyy/Downloads/google-cloud-sdk-275.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc'; fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/ogoranskyy/.sdkman"
+[[ -s "/home/ogoranskyy/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ogoranskyy/.sdkman/bin/sdkman-init.sh"
