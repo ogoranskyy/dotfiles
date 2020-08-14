@@ -8,7 +8,14 @@ export ZSH="/home/ogoranskyy/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="bullet-train"
+
+BULLETTRAIN_PROMPT_ORDER=(
+	context
+	dir
+	git
+	time
+)
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -45,7 +52,7 @@ export UPDATE_ZSH_DAYS=7
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -112,8 +119,6 @@ PERL_MB_OPT="--install_base \"/home/ogoranskyy/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/ogoranskyy/perl5"; export PERL_MM_OPT;
 
 autoload -Uz $fpath[1]/*(.:t)
-
-PROMPT="%{$fg[white]%}%n@%{$fg[green]%}%m%{$reset_color%} ${PROMPT}"
 
 alias start_ep6docker="sh ~/Docker/start_ep6docker.sh"
 
