@@ -111,7 +111,7 @@ PERL_LOCAL_LIB_ROOT="/home/ogoranskyy/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_
 PERL_MB_OPT="--install_base \"/home/ogoranskyy/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/ogoranskyy/perl5"; export PERL_MM_OPT;
 
-autoload -Uz rabbitmq_get_dlq_messages filter_tenant_id filter_retry_queue filter_payloads filter_count_messages decode_jwt kn-connect
+autoload -Uz $fpath[1]/*(.:t)
 
 PROMPT="%{$fg[white]%}%n@%{$fg[green]%}%m%{$reset_color%} ${PROMPT}"
 
