@@ -1,3 +1,5 @@
 function filter_retry_queue() {
     jq -r '.[].properties.headers."x-death"[0].queue'
 }
+
+filter_retry_queue $1

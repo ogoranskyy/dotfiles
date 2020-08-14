@@ -1,3 +1,5 @@
 function filter_count_messages() {
     jq '. | length'
 }
+
+filter_count_messages $1

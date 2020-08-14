@@ -14,3 +14,5 @@ function kn-connect() {
 
     gcloud container clusters get-credentials $1 --zone $ZONE --project epages-ng
 }
+
+kn-connect $1

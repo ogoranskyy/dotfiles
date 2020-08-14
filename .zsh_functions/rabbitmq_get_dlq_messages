@@ -8,3 +8,5 @@ function rabbitmq_get_dlq_messages() {
     echo "Please provide a vertial name as parameter, e.g. order"
   fi
 }
+
+rabbitmq_get_dlq_messages $1
